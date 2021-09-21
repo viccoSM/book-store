@@ -1,0 +1,162 @@
+.header {
+  line-height: 40px;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.header h3 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+.container .head {
+  margin-top: 1rem;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  color: white;
+  height: 1.6rem;
+  padding: 0 1.2rem;
+  border-radius: 10px;
+  border-style: none;
+  background-color: salmon;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.card {
+  margin-top: 1.4rem;
+  /* width: 100%; */
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.card-img {
+  text-align: right;
+  height: 185px;
+}
+
+.card-img img {
+  height: 100%;
+  width: auto;
+}
+
+.card-desc p {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.text-mute {
+  color: rgb(139, 139, 139);
+}
+
+input[type='text'],
+input[type='date'],
+input[type='number'],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color: rgb(238, 238, 238);
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal.hide {
+  display: none;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-header {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 18px;
+  padding: 0;
+  border-style: none;
+  background-color: transparent;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.modal .modal .btn {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+form {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
