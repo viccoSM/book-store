@@ -1,43 +1,26 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountry } from '../redux/Actions';
+import { getCountry, postApi, setPost } from '../redux/Actions';
 
 export default function Modal(props) {
   const { className, onClick } = props;
-  const [values, setValues] = useState({
-    title: '',
-    author: '',
-    isbn: '',
-    publishedOn: '',
-    numberOfPages: '',
-    country: '',
-  });
 
   const { countries } = useSelector((state) => state.countryReducer);
+  const { form } = useSelector((state) => state.booksReducer);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setValues({
-      ...values,
-      [id]: value,
-    });
+    console.log(id);
+    console.log(value);
+    dispatch(setPost(id, value));
   };
 
   const onSubmit = (e) => {
+    // console.log(form);
     e.preventDefault();
-
-    Axios.post(
-      'https://5de759a9b1ad690014a4e21e.mockapi.io/api/v1/books',
-      values
-    )
-      .then((res) => {
-        console.log('success', res);
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
+    postApi(form);
   };
 
   useEffect(() => {
@@ -63,7 +46,7 @@ export default function Modal(props) {
               type="text"
               required
               id="title"
-              value={values.title}
+              value={form.title}
               onChange={handleChange}
             />
           </div>
@@ -73,7 +56,7 @@ export default function Modal(props) {
               type="text"
               required
               id="author"
-              value={values.author}
+              value={form.author}
               onChange={handleChange}
             />
           </div>
@@ -83,7 +66,7 @@ export default function Modal(props) {
               type="text"
               required
               id="isbn"
-              value={values.isbn}
+              value={form.isbn}
               onChange={handleChange}
             />
           </div>
@@ -93,7 +76,7 @@ export default function Modal(props) {
               type="date"
               required
               id="publishedOn"
-              value={values.publishedOn}
+              value={form.publishedOn}
               onChange={handleChange}
             />
           </div>
@@ -103,7 +86,7 @@ export default function Modal(props) {
               type="number"
               required
               id="numberOfPages"
-              value={values.numberOfPages}
+              value={form.numberOfPages}
               onChange={handleChange}
             />
           </div>
@@ -113,7 +96,7 @@ export default function Modal(props) {
               type="text"
               required
               id="country"
-              value={values.country}
+              value={form.country}
               onChange={handleChange}>
               {countries.map((obj, index) => {
                 return (
@@ -125,7 +108,7 @@ export default function Modal(props) {
             </select>
           </div>
           <div className="text-right">
-            <button className="btn" onClick={onSubmit}>
+            <button type="submit" className="btn" onClick={onSubmit}>
               Submit
             </button>
           </div>

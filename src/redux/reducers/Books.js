@@ -1,5 +1,13 @@
 const initialState = {
   books: [],
+  form: {
+    title: '',
+    author: '',
+    isbn: '',
+    publishedOn: '',
+    numberOfPages: '',
+    country: '',
+  },
 };
 
 const booksReducer = (state = initialState, action) => {
@@ -9,6 +17,15 @@ const booksReducer = (state = initialState, action) => {
     return {
       ...state,
       books: payload,
+    };
+  }
+  if (type === 'SET_BOOKS') {
+    return {
+      ...state,
+      form: {
+        ...state.form,
+        [action.typeValue]: payload,
+      },
     };
   }
 

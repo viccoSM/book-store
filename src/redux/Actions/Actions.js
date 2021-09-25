@@ -13,20 +13,19 @@ export const getBooks = () => {
   };
 };
 
-export const setPost = (postType, postValue) => {
-  return { type: 'SET_POST', postType, postValue };
+export const setPost = (typeValue, payload) => {
+  return { type: 'SET_BOOKS', typeValue, payload };
 };
 
 export const postApi = (form) => {
-  const data = new FormData();
-  data.append(form.title);
-  data.append(form.author);
-  data.append(form.isbn);
-  data.append(form.publishedOn);
-  data.append(form.numberOfPages);
-  data.append(form.country);
-
-  Axios.post('https://5de759a9b1ad690014a4e21e.mockapi.io/api/v1/books', data)
+  // const data = new FormData();
+  // data.append('title', form.title);
+  // data.append('author', form.author);
+  // data.append('isbn', form.isbn);
+  // data.append('publishedOn', form.publishedOn);
+  // data.append('numberOfPages', form.numberOfPages);
+  // data.append('country', form.country);
+  Axios.post('https://5de759a9b1ad690014a4e21e.mockapi.io/api/v1/books', form)
     .then((res) => {
       console.log('success', res);
     })

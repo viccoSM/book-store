@@ -2,8 +2,8 @@ import React from 'react';
 import { format } from 'date-fns';
 
 export default function Card({ data }) {
-  const date = new Date(data.publishedOn);
-  const formatDate = format(date, 'MMMM dd, yyyy');
+  // const date = new Date(data.publishedOn);
+  // const formatDate = format(date, 'MMMM dd, yyyy');
 
   return (
     <div className="card">
@@ -23,7 +23,8 @@ export default function Card({ data }) {
               <p>
                 <span className="text-mute">Published on</span>
                 <br />
-                {formatDate}
+                {/* {formatDate} */}
+                {data.publishedOn}
               </p>
             </div>
             <div className="card-desc">
